@@ -341,9 +341,7 @@ class MailingService extends \SoapClient
       $options = array_merge(array (
       'features' => 1,
     ), $options);
-      if (!$wsdl) {
-        $wsdl = 'https://activenetwork.hosted.strongview.com:443/sm/services/mailing/v2?wsdl';
-      }
+
       parent::__construct($wsdl, $options);
     }
 

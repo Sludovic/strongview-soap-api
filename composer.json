@@ -1,5 +1,5 @@
 {
-    "name": "activenetwork/selligent",
+    "name": "activenetwork/strongview-soap-api",
     "description": "PHP classes based on Selligent's Message Studio SOAP WSDL",
     "keywords": ["Selligent", "StrongView", "Message Studio", "SOAP", "API"],
     "type": "project",

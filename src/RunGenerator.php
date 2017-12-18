@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Dotenv\Dotenv;
 use Wsdl2PhpGenerator\Generator;
 use Wsdl2PhpGenerator\Config;
 
@@ -22,10 +23,13 @@ class RunGenerator
      * @return void
      */
     public static function execute() {
+        $dotenv = new Dotenv(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR);
+        $dotenv->load();
+
         $generator = new Generator();
         $generator->generate(
            new Config(array(
-               'inputFile' => 'https://activenetwork.hosted.strongview.com:443/sm/services/mailing/v2?wsdl',
+               'inputFile' => getenv('SELLIGENT_WSDL'),
                'outputDir' => __DIR__.'/Selligent/MessageStudio',
                'namespaceName' => 'Selligent\MessageStudio'
            ))

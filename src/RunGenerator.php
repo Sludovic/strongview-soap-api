@@ -30,7 +30,7 @@ class RunGenerator
         $generator = new Generator();
         $generator->generate(
            new Config(array(
-               'inputFile' => getenv('SOAP_WSDL'),
+               'inputFile' => getenv('SELLIGENT_SOAP_WSDL'),
                'outputDir' => __DIR__.'/Selligent/MessageStudio',
                'namespaceName' => 'Selligent\MessageStudio'
            ))

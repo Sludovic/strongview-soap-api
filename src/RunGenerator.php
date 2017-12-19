@@ -6,7 +6,7 @@ use Dotenv\Dotenv;
 use Wsdl2PhpGenerator\Generator;
 use Wsdl2PhpGenerator\Config;
 
-require __DIR__.'/../autoload.php';
+require __DIR__.'/../vendor/autoload.php';
 
 RunGenerator::execute();
 

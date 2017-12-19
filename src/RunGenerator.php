@@ -6,7 +6,7 @@ use Dotenv\Dotenv;
 use Wsdl2PhpGenerator\Generator;
 use Wsdl2PhpGenerator\Config;
 
-require __DIR__.'/../vendor/autoload.php';
+require __DIR__.'/../autoload.php';
 
 RunGenerator::execute();
 
@@ -18,21 +18,32 @@ RunGenerator::execute();
 class RunGenerator
 {
     /**
-     *
+     * Generate WSDL classes
      *
      * @return void
      */
-    public static function execute() {
+    public static function execute()
+    {
         $dotenv = new Dotenv(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR);
         $dotenv->load();
 
         $generator = new Generator();
         $generator->generate(
            new Config(array(
-               'inputFile' => getenv('SELLIGENT_WSDL'),
+               'inputFile' => getenv('SOAP_WSDL'),
                'outputDir' => __DIR__.'/Selligent/MessageStudio',
                'namespaceName' => 'Selligent\MessageStudio'
            ))
         );
+    }
+
+    /**
+     * Test connection
+     *
+     * @return void
+     */
+    public static function test()
+    {
+
     }
 }

@@ -1,5 +1,6 @@
 {
     "name": "activenetwork/strongview-soap-api",
+    "type": "library",
     "description": "PHP classes based on Selligent's Message Studio SOAP WSDL",
     "keywords": ["Selligent", "StrongView", "Message Studio", "SOAP", "API"],
     "license": "proprietary",
